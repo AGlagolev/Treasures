@@ -4,6 +4,10 @@ using namespace std;
 void FillRand(int Arr[], const int n);
 void Print(int Arr[], const int n);
 void Sort(int Arr[], const int n);
+int  Sum(int Arr[], const int n);	//Прототип функции - Function declaration
+double Avg(int Arr[], const int n);
+int  minValueIn(int Arr[], const int n);
+int  maxValueIn(int Arr[], const int n);
 
 void main()
 {
@@ -15,15 +19,23 @@ void main()
 	Print(Arr, n);
 	Sort(Arr, n);
 	Print(Arr, n);
+	cout << "Сумма элементов массива: " << Sum(Arr, n) << endl;
+	cout << "Среднее арифметическое : " << Avg(Arr, n) << endl;
+	cout << "Минимальное значение в массиве: " << minValueIn(Arr, n) << endl;
+	cout << "Максимальное значение в массиве: " << maxValueIn(Arr, n) << endl;
 
 	//////////////////////////////////////////////////////////////
 
 	const int m = 10;
-	int Brr[m];
+	double Brr[m];
 	FillRand(Brr, m);
 	Print(Brr, m);
 	Sort(Brr, m);
 	Print(Brr, m);
+	cout << "Сумма элементов массива: " << Sum(Brr, m) << endl;
+	cout << "Среднее арифметическое : " << Avg(Brr, m) << endl;
+	cout << "Минимальное значение в массиве: " << minValueIn(Brr, m) << endl;
+	cout << "Максимальное значение в массиве: " << maxValueIn(Brr, m) << endl;
 }
 
 void FillRand(int Arr[], const int n)
@@ -60,4 +72,38 @@ void Sort(int Arr[], const int n)
 			}
 		}
 	}
+}
+
+int  Sum(int Arr[], const int n)
+{
+	int Sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		Sum += Arr[i];
+	}
+	return Sum;
+}
+
+double Avg(int Arr[], const int n)
+{
+	return (double)Sum(Arr, n) / n;
+}
+
+int  minValueIn(int Arr[], const int n)
+{
+	int min = Arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (Arr[i] < min)min = Arr[i];
+	}
+	return min;
+}
+int  maxValueIn(int Arr[], const int n)
+{
+	int max = Arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (Arr[i] > max)max = Arr[i];
+	}
+	return max;
 }
