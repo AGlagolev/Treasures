@@ -18,6 +18,7 @@ void Print(int Arr[ROWS][COLS]); // Двухмерный массив
 void Sort(int Arr[], const int n);
 void Sort(double Arr[], const int n);// Overload Sort
 void Sort(char Arr[], const int n);
+void Sort(int Arr[ROWS][COLS]);
 
 int  Sum(int Arr[], const int n);	//Прототип функции - Function declaration
 double Sum(double Arr[], const int n); // Overload Sum
@@ -82,6 +83,9 @@ void main()
 	};*/
 
 	FillRand(Drr);	
+	Print(Drr);
+	cout << endl;
+	Sort(Drr);
 	Print(Drr);
 }
 
@@ -230,7 +234,31 @@ void Sort(char Arr[], const int n)
 	}
 }
 ////////////////////////////////////////
+void Sort(int Arr[ROWS][COLS])
+{////Сортировка:
+	for (int x = 0; x < ROWS; x++)
+	{
+		
+	for (int i = 0; i < COLS; i++)
+	{
+		for (int j = i + 1; j < COLS; j++)
+		{
+			if (Arr[x][j] < Arr[x][i])
+			{
+				int buffer = Arr[x][i];
+				Arr[x][i] = Arr[x][j];
+				Arr[x][j] = buffer;
+			}
+		}
+	}
 
+
+
+	}
+	
+
+
+}
 
 
 int  Sum(int Arr[], const int n)
