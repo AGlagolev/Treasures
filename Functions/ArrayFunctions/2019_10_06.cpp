@@ -72,7 +72,7 @@ void Blink();
 //#define CHARx1
 
 //#define INTx2
-//#define DOUBLEx2
+#define DOUBLEx2
 #define CHARx2
 /**********************************************************************************************/
 
